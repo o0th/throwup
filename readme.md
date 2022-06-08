@@ -31,18 +31,15 @@ Instead of throwing an error, return `{ throwup }`.
 ```js
 import { encase } from "throwup"
 
-const reject = () => Promise.reject('Error')
-const resolve = () => Promise.resolve('Ok')
+const reject = encase(() => Promise.reject('Error'))
+const resolve = encase(() => Promise.resolve('Ok'))
 
-const rejectOpr = encase(reject)
-const resolveOpr = encase(resolve)
-
-const rejectRes = await rejectOpr()
+const rejectRes = await reject()
 if (rejectRes.throwup) {
   /* true */
 }
 
-const resolveRes = await resolveOpr()
+const resolveRes = await resolve()
 if (resolveRes.throwup) {
   /* false */
 }
