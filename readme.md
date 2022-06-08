@@ -1,3 +1,9 @@
+### install
+
+```bash
+npm install throwup
+```
+
 ### encaseSync
 
 Instead of throwing an error, return `{ throwup }`.
