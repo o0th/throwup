@@ -45,12 +45,12 @@ if (resolveRes.throwup) {
 }
 ```
 
-### first
+### fts
 
 Given an array of function return the first non undefined or resolved value.
 
 ```js
-const result = await first([
+const result = await fts([
   () => true === false,
   () => new Promise((resolve) => { setTimeout(() => resolve(), 1000) }),
   () => new Promise((resolve, reject) => reject()),

@@ -14,10 +14,10 @@ export const encase = (fn) => async (...args) => {
   }
 }
 
-export const first = (fns) => {
+export const fts = async (fns) => {
   for (const fn of fns) {
     try {
-      const result = await fn(...args)
+      const result = await fn()
       if (result) return result
     } catch {
       continue
