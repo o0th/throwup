@@ -13,3 +13,14 @@ export const encase = (fn) => async (...args) => {
     return { throwup }
   }
 }
+
+export const fts = async (fns) => {
+  for (const fn of fns) {
+    try {
+      const result = await fn()
+      if (result) return result
+    } catch {
+      continue
+    }
+  }
+}
